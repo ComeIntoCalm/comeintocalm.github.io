@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff134f;
+  background: #ffff2f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2990,59 +2990,4 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
-}
-body {
-  background: url("https://api.ihcr.top/randacg/random.php");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-  background-size: 100%;
-}
-.site-meta {
-  padding: 20px 0;
-  color: #fff;
-  background-color: #87daff;
-/* background-color: powderblue; */
-}
-.site-subtitle {
-  color: #fff;
-}
-.main-inner {
-  opacity: 0.789;
-}
-.content-wrap {
-  margin-bottom: 50px;
-  padding: 45px 36px 36px 36px;
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
-  background-color: #fff;
-}
-.posts-expand .post-body img {
-  margin: 0 auto;
-}
-#download {
-  display: inline-block;
-  padding: 0 10px;
-  color: #000;
-  background: transparent;
-  border: 2px solid #000;
-  border-radius: 2px;
-  transition: all 0.5s ease;
-  font-weight: bold;
-}
-#download:hover {
-  background: #000;
-  color: #fff;
-}
-.post-more-link .btn {
-  position: relative;
-  border: 2px solid #000;
-  border-radius: 2px;
-  padding: 0 10px;
-  font-weight: bold;
-  background: transparent;
-  transition: all 0.5s ease;
-}
-.post-more-link .btn:hover {
-  background: #000;
-  color: #eee;
 }
