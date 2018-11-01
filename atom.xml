@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://comeintocalm.cn/"/>
-  <updated>2018-11-01T11:10:15.854Z</updated>
+  <updated>2018-11-01T11:49:05.895Z</updated>
   <id>https://comeintocalm.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>后缀数组SA</title>
+    <link href="https://comeintocalm.cn/2018/11/01/SA/"/>
+    <id>https://comeintocalm.cn/2018/11/01/SA/</id>
+    <published>2018-11-01T11:46:31.000Z</published>
+    <updated>2018-11-01T11:49:05.895Z</updated>
+    
+    <content type="html"><![CDATA[<p> 因为刚学习SA 所以这里就放一些SA入门级的东西    </p><p> 抱歉这篇文章鸽了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt; 因为刚学习SA 所以这里就放一些SA入门级的东西    &lt;/p&gt;
+&lt;p&gt; 抱歉这篇文章鸽了&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="后缀数组" scheme="https://comeintocalm.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
   
   <entry>
     <title>指数生成函数和狄利克雷生成函数</title>
