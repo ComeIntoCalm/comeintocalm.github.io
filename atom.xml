@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://comeintocalm.cn/"/>
-  <updated>2018-11-01T11:49:05.895Z</updated>
+  <updated>2018-11-01T12:45:22.662Z</updated>
   <id>https://comeintocalm.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://comeintocalm.cn/2018/11/01/SA/"/>
     <id>https://comeintocalm.cn/2018/11/01/SA/</id>
     <published>2018-11-01T11:46:31.000Z</published>
-    <updated>2018-11-01T11:49:05.895Z</updated>
+    <updated>2018-11-01T12:45:22.662Z</updated>
     
     <content type="html"><![CDATA[<p> 因为刚学习SA 所以这里就放一些SA入门级的东西    </p><p> 抱歉这篇文章鸽了</p>]]></content>
     
@@ -36,6 +36,8 @@
     
     </summary>
     
+      <category term="OI学习笔记" scheme="https://comeintocalm.cn/categories/OI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
     
       <category term="后缀数组" scheme="https://comeintocalm.cn/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
     
@@ -46,7 +48,7 @@
     <link href="https://comeintocalm.cn/2018/11/01/%E6%8C%87%E6%95%B0%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E5%92%8C%E7%8B%84%E5%88%A9%E5%85%8B%E9%9B%B7%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/"/>
     <id>https://comeintocalm.cn/2018/11/01/指数生成函数和狄利克雷生成函数/</id>
     <published>2018-11-01T11:06:40.000Z</published>
-    <updated>2018-11-01T11:10:15.854Z</updated>
+    <updated>2018-11-01T12:45:43.100Z</updated>
     
     <content type="html"><![CDATA[<h5 id="New-Blog"><a href="#New-Blog" class="headerlink" title="New Blog"></a>New Blog</h5>]]></content>
     
@@ -58,6 +60,8 @@
       
     
     </summary>
+    
+      <category term="OI学习笔记" scheme="https://comeintocalm.cn/categories/OI%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="生成函数" scheme="https://comeintocalm.cn/tags/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0/"/>
