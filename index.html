@@ -406,7 +406,7 @@
                 
               
 
-              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：10:34:56" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
+              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：10:43:57" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
             
 
             
@@ -472,8 +472,8 @@ dp[i] = \frac {n - dp[i - 1]}{n} + dp[i - 1]</script><h5 id="3-ZOJ3640Help-Me-Es
 <script type="math/tex; mode=display">
 dp[ f ] = \sum_{i = 1}^{n}{
 \begin{cases}
-if (f > C[i]),\space\space\frac{1}{n} * t[i]\space\\
-else,\space \space \frac{1}{n}*dp[f+C[i]]
+\frac{1}{n} * t[i],\space if (f > C[i])\space\\
+\frac{1}{n}*dp[f+C[i]], \space if (f <= C[i])\space
 \end{cases}
 }</script><p>dp直接做不太容易啊….记忆化搜索一发就好了….</p>
 <h5 id="HDU4035-Maze"><a href="#HDU4035-Maze" class="headerlink" title="HDU4035 Maze"></a>HDU4035 Maze</h5><p>现在有一棵树 第一天在1号节点 对于每一个节点$i$有三种可能</p>

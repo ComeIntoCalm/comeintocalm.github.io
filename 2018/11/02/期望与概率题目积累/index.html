@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="cjc&#39;s Blog">
 <meta property="og:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-02T02:34:56.584Z">
+<meta property="og:updated_time" content="2018-11-02T02:43:57.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="期望与概率题目积累">
 <meta name="twitter:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
@@ -402,7 +402,7 @@
                 
               
 
-              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：10:34:56" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
+              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：10:43:57" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
             
 
             
@@ -466,8 +466,8 @@ dp[i] = \frac {n - dp[i - 1]}{n} + dp[i - 1]</script><h5 id="3-ZOJ3640Help-Me-Es
 <script type="math/tex; mode=display">
 dp[ f ] = \sum_{i = 1}^{n}{
 \begin{cases}
-if (f > C[i]),\space\space\frac{1}{n} * t[i]\space\\
-else,\space \space \frac{1}{n}*dp[f+C[i]]
+\frac{1}{n} * t[i],\space if (f > C[i])\space\\
+\frac{1}{n}*dp[f+C[i]], \space if (f <= C[i])\space
 \end{cases}
 }</script><p>dp直接做不太容易啊….记忆化搜索一发就好了….</p>
 <h5 id="HDU4035-Maze"><a href="#HDU4035-Maze" class="headerlink" title="HDU4035 Maze"></a>HDU4035 Maze</h5><p>现在有一棵树 第一天在1号节点 对于每一个节点$i$有三种可能</p>
