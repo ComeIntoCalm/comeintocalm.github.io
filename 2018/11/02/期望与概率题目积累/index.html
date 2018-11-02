@@ -108,18 +108,18 @@
 
 
 
-  <meta name="description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * (dp[i + 1] + 1)2 SGU495Kids and Prizes$M$">
+  <meta name="description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
 <meta name="keywords" content="概率,期望">
 <meta property="og:type" content="article">
 <meta property="og:title" content="期望与概率题目积累">
 <meta property="og:url" content="https://comeintocalm.cn/2018/11/02/期望与概率题目积累/index.html">
 <meta property="og:site_name" content="cjc&#39;s Blog">
-<meta property="og:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * (dp[i + 1] + 1)2 SGU495Kids and Prizes$M$">
+<meta property="og:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-02T02:50:18.863Z">
+<meta property="og:updated_time" content="2018-11-02T02:54:07.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="期望与概率题目积累">
-<meta name="twitter:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * (dp[i + 1] + 1)2 SGU495Kids and Prizes$M$">
+<meta name="twitter:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
 
 
 
@@ -402,7 +402,7 @@
                 
               
 
-              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：10:50:18" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
+              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：10:54:07" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
             
 
             
@@ -454,7 +454,7 @@
 <h5 id="1-SPOJ-Favorite-Dice"><a href="#1-SPOJ-Favorite-Dice" class="headerlink" title="1 SPOJ Favorite Dice"></a>1 SPOJ Favorite Dice</h5><p>一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。  </p>
 <p>考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。  </p>
 <script type="math/tex; mode=display">
-dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * (dp[i + 1] + 1)</script><h5 id="2-SGU495Kids-and-Prizes"><a href="#2-SGU495Kids-and-Prizes" class="headerlink" title="2 SGU495Kids and Prizes"></a>2 SGU495Kids and Prizes</h5><p>$M$个人排队来取$N$个礼物 每个人打开的盒子 可能有礼物 也可能空 有礼物的话拿走礼物并放回盒子 没有礼物 直接放回盒子 问$M$个人取走礼物的期望个数   </p>
+dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 1</script><h5 id="2-SGU495Kids-and-Prizes"><a href="#2-SGU495Kids-and-Prizes" class="headerlink" title="2 SGU495Kids and Prizes"></a>2 SGU495Kids and Prizes</h5><p>$M$个人排队来取$N$个礼物 每个人打开的盒子 可能有礼物 也可能空 有礼物的话拿走礼物并放回盒子 没有礼物 直接放回盒子 问$M$个人取走礼物的期望个数   </p>
 <p>考虑第i个人 能够取到的礼物期望个数 显然第一个人为1   </p>
 <script type="math/tex; mode=display">
 dp[i] = \frac {n - dp[i - 1]}{n} + dp[i - 1]</script><h5 id="3-ZOJ3640Help-Me-Escape"><a href="#3-ZOJ3640Help-Me-Escape" class="headerlink" title="3 ZOJ3640Help Me Escape"></a>3 ZOJ3640Help Me Escape</h5><p>现在有n个OI考场 每个考场有固定的水平 $C[i]$ 你是个喜欢炸鱼但是水平不怎么样的OI选手    </p>
