@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="cjc&#39;s Blog">
 <meta property="og:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-02T02:59:56.666Z">
+<meta property="og:updated_time" content="2018-11-02T05:53:48.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="期望与概率题目积累">
 <meta name="twitter:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
@@ -402,7 +402,7 @@
                 
               
 
-              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：10:59:56" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
+              <time title="创建时间：2018-11-02 08:14:05 / 修改时间：13:53:48" itemprop="dateCreated datePublished" datetime="2018-11-02T08:14:05+08:00">2018-11-02</time>
             
 
             
@@ -473,7 +473,7 @@
 <p>考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。  </p>
 <script type="math/tex; mode=display">
 dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 1</script><h5 id="2-SGU495Kids-and-Prizes"><a href="#2-SGU495Kids-and-Prizes" class="headerlink" title="2 SGU495Kids and Prizes"></a>2 SGU495Kids and Prizes</h5><p>$M$个人排队来取$N$个礼物 每个人打开的盒子 可能有礼物 也可能空 有礼物的话拿走礼物并放回盒子 没有礼物 直接放回盒子 问$M$个人取走礼物的期望个数   </p>
-<p>考虑第i个人 能够取到的礼物期望个数 显然第一个人为1   </p>
+<p>考虑前i个人 能够取到的礼物期望个数 显然第一个人为1   </p>
 <script type="math/tex; mode=display">
 dp[i] = \frac {n - dp[i - 1]}{n} + dp[i - 1]</script><h5 id="3-ZOJ3640Help-Me-Escape"><a href="#3-ZOJ3640Help-Me-Escape" class="headerlink" title="3 ZOJ3640Help Me Escape"></a>3 ZOJ3640Help Me Escape</h5><p>现在有n个OI考场 每个考场有固定的水平 $C[i]$ 你是个喜欢炸鱼但是水平不怎么样的OI选手    </p>
 <p>你拥有初始战斗力 $F$ ,每天你会随机选一个考场炸鱼 如果你的 当前水平$F &gt; C[i]$ 那么就会炸鱼成功  </p>
@@ -492,14 +492,14 @@ dp[ f ] = \sum_{i = 1}^{n}{
 <p>$1. GG,回到点1 \space 对应概率为 K[i]$     </p>
 <p>$2.被救,\space 对应概率为 E[i]$    </p>
 <p>$3.等概率地走到相邻节点$      </p>
-<p>问被就走的天数期望 不能则printf $impossible$    </p>
+<p>问被救走的天数期望 不能则printf $impossible$    </p>
 <p>这个题存在后效性       </p>
-<p>如果求$dp[S]$ 那么$dp[S]$ 和 $S$ 的子节点以及父节点都有直接关系 去求子节点时又和$S$ 本身有关系…     </p>
+<p>如果求$dp[S]​$ 那么$dp[S]​$ 和 $S​$ 的子节点以及父节点都有直接关系 去求子节点时又和$S​$ 本身有关系…     </p>
 <p>一开始以为要高斯消元 发现自己tooyoungtooNaive… N^3用个毛…</p>
 <p>然后发现了厉害的方法….</p>
-<p>就需要找办法排除后效性  大概就是找个公式 然后公式本身和后效性有关 然后工时之间的后效性可以相互抵消…     </p>
+<p>找办法排除后效性  大概就是找个公式 然后公式本身和后效性有关 然后公式之间的后效性可以相互抵消…     </p>
 <p>然后就引用一发_kuangbin爷的….   </p>
-<p>设$E[i]$表示在点i出, 要逃出的边数期望。 那么$ans = dp[1]$   </p>
+<p>设$E[i]$表示在点i处, 要逃出的边数期望。 那么$ans = dp[1]$   </p>
 <p>对于叶子结点来说    </p>
 <script type="math/tex; mode=display">
 \begin{equation}
@@ -514,8 +514,20 @@ dp[i] = K[i] * dp[1] + E[i] * 0 + (1 - K[i] - E[i])*(dp[fa[i]] + 1)\\
 dp[i] = K[i] * dp[1] + E[i] * 0 + \frac{(1 - E[i] - K[i])}{deg[i]}*(dp[fa[i]] + 1 + \sum_{son∈i}{dp[son]})\\
 = K[i] * dp[1] + \frac{(1 - E[i] - K[i])}{deg[i]} * dp[fa[i]] + \frac{1 - E[i] - K[i]}{deg[i]} * \sum_{son∈i}{dp[son]}
 \end{split}
-\end{equation}</script><p>然后你再设对于每个节点来说   </p>
-
+\end{equation}</script><p>然后再设对于每个节点来说        </p>
+<script type="math/tex; mode=display">
+dp[i] = A[i] * dp[1] + B[i] * dp[fa[i]] +C[i];</script><p>对于非叶子结点$i$  设$j$为$i$的孩子,于是有           </p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{split}
+\sum_{son∈i}{dp[son]} &= 
+\sum{dp[j]}\\
+&=\sum{(A[j] * dp[1] + B[j] * dp[fa[j]] + C[j])}\\
+&=\sum{(A[j] * dp[1] + B[j] * dp[i] + C[j])}\\
+\end{split}
+\end{equation}</script><p>把上面的式子带进去 就可以得到</p>
+<script type="math/tex; mode=display">
+(1 - \frac{1 - K[i] - E[i]}{deg[i]} * \sum{B[j]}) * dp[i] = (K[i] + (\frac{1 - K[i] - E[i]}{deg[i]}) * \sum{A[j]}) * dp[1] \\+ (\frac{1 - K[i] - E[i]}{deg[i]}) * dp[fa[i]] +(1 - K[i] - E[i]) + \frac{1 - K[i] - E[i]}{deg[i]} * \sum{C[j]}</script>
       
     </div>
 
