@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="cjc&#39;s Blog">
 <meta property="og:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-03T00:53:17.407Z">
+<meta property="og:updated_time" content="2018-11-03T08:20:26.498Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="期望与概率题目积累">
 <meta name="twitter:description" content="就是从最简单的开始积累期望和概率题目    1 SPOJ Favorite Dice一个 $N$ 面 骰子 问每一面都被甩到的 次数期望是多少。   考虑拥有一个包含i面集合时甩出来有以下的答案贡献，移项逆推 。    dp[i] = \frac {i}{n} * dp[i] + \frac{n - i}{n} * dp[i + 1] + 12 SGU495Kids and Prizes$M$个人">
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-03 08:53:17" itemprop="dateModified" datetime="2018-11-03T08:53:17+08:00">2018-11-03</time>
+                <time title="修改时间：2018-11-03 16:20:26" itemprop="dateModified" datetime="2018-11-03T16:20:26+08:00">2018-11-03</time>
               
             
           </span>
@@ -585,7 +585,12 @@ f[i][j] += f[i - 1][j] * (1 - p[i])^{r - j},\space(i > j)\\</script><p>发动的
 <p>发动：   </p>
 <script type="math/tex; mode=display">
 f[i][j] += f[i - 1][j - 1] * (1 - (1 - p[i])^{r - (j - 1)}), \space (j > 0)</script><p>时间复杂度 $\Theta (Tnr)$    </p>
-<p>一开始我写挂了怎么调都调不出来….后来才发现是快速幂…不过快速幂的确没毛病啊…不知道为啥快速幂就是错的…..果断换成了手动俩for 预处理1 - p[i]的pow…..1发a了…     </p>
+<p>一开始我写挂了怎么调都调不出来….后来才发现是快速幂…不过快速幂的确没毛病啊…不知道为啥快速幂就是错的…..果断换成了手动俩for 预处理1 - p[i]的pow…..1发a了…        </p>
+<p>再来看个简单的…      </p>
+<h5 id="7-BZOJ-3143-游走"><a href="#7-BZOJ-3143-游走" class="headerlink" title="7 BZOJ 3143 游走"></a>7 BZOJ 3143 游走</h5><p>一个无向连通图，顶点从1编号到N，边从1编号到M。<br>小Z在该图上进行随机游走，初始时小Z在1号顶点，每一步小Z以相等的概率随机选 择当前顶点的某条边，沿着这条边走到下一个顶点，获得等于这条边的编号的分数。当小Z 到达N号顶点时游走结束，总分为所有获得的分数之和。<br>现在，请你对这M条边进行编号，使得小Z获得的总分的期望值最小。         </p>
+<p>$N &lt;= 500$  </p>
+<p>嘛 很明显 经过期望次数多的边编号要小 然后就变成了求每条边经过的期望次数   </p>
+<p>然后经过每条边的期望次数   就是$\frac{1}{deg<em>{e_i.u}}  * f[e_i.u] + \frac{1}{deg</em>{e_i.v}} * f[e_i.v]$  排个序就完事了….   </p>
 
       
     </div>
@@ -813,7 +818,7 @@ f[i][j] += f[i - 1][j - 1] * (1 - (1 - p[i])^{r - (j - 1)}), \space (j > 0)</scr
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-SPOJ-Favorite-Dice"><span class="nav-number">1.</span> <span class="nav-text">1 SPOJ Favorite Dice</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-SGU495Kids-and-Prizes"><span class="nav-number">2.</span> <span class="nav-text">2 SGU495Kids and Prizes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-ZOJ3640Help-Me-Escape"><span class="nav-number">3.</span> <span class="nav-text">3 ZOJ3640Help Me Escape</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-HDU4035-Maze"><span class="nav-number">4.</span> <span class="nav-text">4 HDU4035 Maze</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-CF-280C"><span class="nav-number">5.</span> <span class="nav-text">5 CF 280C</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-BZOJ-4006-亚瑟王"><span class="nav-number">6.</span> <span class="nav-text">6    BZOJ 4006 亚瑟王</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-SPOJ-Favorite-Dice"><span class="nav-number">1.</span> <span class="nav-text">1 SPOJ Favorite Dice</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-SGU495Kids-and-Prizes"><span class="nav-number">2.</span> <span class="nav-text">2 SGU495Kids and Prizes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-ZOJ3640Help-Me-Escape"><span class="nav-number">3.</span> <span class="nav-text">3 ZOJ3640Help Me Escape</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-HDU4035-Maze"><span class="nav-number">4.</span> <span class="nav-text">4 HDU4035 Maze</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-CF-280C"><span class="nav-number">5.</span> <span class="nav-text">5 CF 280C</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-BZOJ-4006-亚瑟王"><span class="nav-number">6.</span> <span class="nav-text">6    BZOJ 4006 亚瑟王</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#7-BZOJ-3143-游走"><span class="nav-number">7.</span> <span class="nav-text">7 BZOJ 3143 游走</span></a></li></ol></div>
             
 
           </div>
