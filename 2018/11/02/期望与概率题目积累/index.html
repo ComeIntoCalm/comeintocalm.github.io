@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="cjc&#39;s Blog">
 <meta property="og:description" content="就是从最简单的开始积累期望和概率题目">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-03T10:53:49.759Z">
+<meta property="og:updated_time" content="2018-11-03T12:23:14.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="期望与概率题目积累">
 <meta name="twitter:description" content="就是从最简单的开始积累期望和概率题目">
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-03 18:53:49" itemprop="dateModified" datetime="2018-11-03T18:53:49+08:00">2018-11-03</time>
+                <time title="修改时间：2018-11-03 20:23:14" itemprop="dateModified" datetime="2018-11-03T20:23:14+08:00">2018-11-03</time>
               
             
           </span>
@@ -550,7 +550,7 @@ C[i] &= ((1 - K[i] - E[i]) + \frac{1 - K[i] - E[i]}{m} * \sum{C[j]})
 <p>再来看个休闲题…..     </p>
 <h5 id="5-CF-280C"><a href="#5-CF-280C" class="headerlink" title="5 CF 280C"></a>5 CF 280C</h5><p>给出一棵点均为白色的树 每次随机等概率选择一未染黑的点 将他及其子树染黑 问染黑整个树的期望操作次数    </p>
 <p>直接做不太好下手   </p>
-<p>所以考虑期望的线性性,$E(ax + by) = a <em> E(x) + b </em> E(y)$    </p>
+<p>所以考虑期望的线性性,$E(ax + by) = a \times E(x) + b \times E(y)$    </p>
 <p>所以问题就转化成求$\sum{ENode[i]}$    </p>
 <p>每次操作的权值都是1 所以就变成了求删除点$i$时恰好选中$i$的概率 , 也就是$\frac{1}{dep_i}$    </p>
 <p>dfs的时候一路加起来 就是ans了。    </p>
@@ -591,7 +591,7 @@ f[i][j] += f[i - 1][j - 1] * (1 - (1 - p[i])^{r - (j - 1)}), \space (j > 0)</scr
 <h5 id="7-BZOJ-3143-游走"><a href="#7-BZOJ-3143-游走" class="headerlink" title="7 BZOJ 3143 游走"></a>7 BZOJ 3143 游走</h5><p>一个无向连通图，顶点从1编号到N，边从1编号到M。<br>小Z在该图上进行随机游走，初始时小Z在1号顶点，每一步小Z以相等的概率随机选 择当前顶点的某条边，沿着这条边走到下一个顶点，获得等于这条边的编号的分数。当小Z 到达N号顶点时游走结束，总分为所有获得的分数之和。<br>现在，请你对这M条边进行编号，使得小Z获得的总分的期望值最小。         </p>
 <p>$N &lt;= 500$  </p>
 <p>嘛 很明显 经过期望次数多的边编号要小 然后就变成了求每条边经过的期望次数   </p>
-<p>然后经过每条边的期望次数   就是$\frac{1}{deg<em>{e_i.u}}  * f[e_i.u] + \frac{1}{deg</em>{e_i.v}} * f[e_i.v]$  排个序就完事了….   </p>
+<p>然后经过每条边的期望次数   就是<br>​    $    \frac{1}{deg_{e[i].u}}  \times f[e[i].u] + \frac{1}{deg_{e[i].v}} \times f[e[i].v]$  排个序就完事了….       </p>
 
       
     </div>
