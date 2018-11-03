@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="cjc&#39;s Blog">
 <meta property="og:description" content="就是从最简单的开始积累期望和概率题目">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-03T23:35:30.698Z">
+<meta property="og:updated_time" content="2018-11-03T23:38:28.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="期望与概率题目积累">
 <meta name="twitter:description" content="就是从最简单的开始积累期望和概率题目">
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-04 07:35:30" itemprop="dateModified" datetime="2018-11-04T07:35:30+08:00">2018-11-04</time>
+                <time title="修改时间：2018-11-04 07:38:28" itemprop="dateModified" datetime="2018-11-04T07:38:28+08:00">2018-11-04</time>
               
             
           </span>
@@ -606,9 +606,9 @@ f[i][j] += f[i - 1][j - 1] * (1 - (1 - p[i])^{r - (j - 1)}), \space (j > 0)</scr
 <p>嘛 很明显 经过期望次数多的边编号要小 然后就变成了求每条边经过的期望次数   </p>
 <p>那就先算点吧 两点互相走的概率加起来 也就是一条边两端点进入这条边的概率相加 就是经过这调边的概率    </p>
 <p>出发点是1 所以$f[1] = 1 + \sum_{to} {\frac {f[to]}{deg[to]}}$         </p>
-<p>其他点就是$f[i] = \sum_{to}{\frac{f[to]}{deg[to]}}$        </p>
+<p>其他点就是$f[i] = \sum_{to}{\frac{f[to]}{deg[to]}}$      </p>
 <p>然后经过每条边的期望次数      </p>
-<p>就是$    \frac{1}{deg<em>{e[i].u}}  \times f[e[i].u] + \frac{1}{deg</em>{e[i].v}} \times f[e[i].v]$  排个序就完事了….       </p>
+<p>就是$    \frac{1}{deg[{e[i].u}]}  \times f[e[i].u] + \frac{1}{deg[{e[i].v}]} \times f[e[i].v]$  排个序就完事了….       </p>
 
       
     </div>
