@@ -423,7 +423,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-03 08:44:32" itemprop="dateModified" datetime="2018-11-03T08:44:32+08:00">2018-11-03</time>
+                <time title="修改时间：2018-11-03 08:53:17" itemprop="dateModified" datetime="2018-11-03T08:53:17+08:00">2018-11-03</time>
               
             
           </span>
@@ -555,7 +555,7 @@ C[i] &= ((1 - K[i] - E[i]) + \frac{1 - K[i] - E[i]}{m} * \sum{C[j]})
 <p>再来看个休闲题…..     </p>
 <h5 id="5-CF-280C"><a href="#5-CF-280C" class="headerlink" title="5 CF 280C"></a>5 CF 280C</h5><p>给出一棵点均为白色的树 每次随机等概率选择一未染黑的点 将他及其子树染黑 问染黑整个树的期望操作次数    </p>
 <p>直接做不太好下手   </p>
-<p>所以考虑期望的线性性 $E(ax + by) = a <em> E(x) + b </em> E(y)$    </p>
+<p>所以考虑期望的线性性,$E(ax + by) = a <em> E(x) + b </em> E(y)$    </p>
 <p>所以问题就转化成求$\sum{ENode[i]}$    </p>
 <p>每次操作的权值都是1 所以就变成了求删除点$i$时恰好选中$i$的概率 , 也就是$\frac{1}{dep_i}$    </p>
 <p>dfs的时候一路加起来 就是ans了。    </p>
