@@ -423,7 +423,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-22 17:23:42" itemprop="dateModified" datetime="2018-12-22T17:23:42+08:00">2018-12-22</time>
+                <time title="修改时间：2018-12-23 10:53:53" itemprop="dateModified" datetime="2018-12-23T10:53:53+08:00">2018-12-23</time>
               
             
           </span>
@@ -467,39 +467,16 @@
 
       
         
+          <p>莫反入门</p>
+          <!--noindex-->
           
-            <a id="more"></a>      
-<script type="math/tex; mode=display">
-
-\sum_{d|n}{ {\phi} (d)} = n \\
- \sum_{d|n}{ {\mu} (d)} = [n == 1]  \\
- {\phi}(n) = \sum_{d|n}{\mu(d)\frac{n}{d}}\\
- \sum_{i = 1}^{n}{[(i,n) == 1] \times i} = 
-   \frac{d \times {\phi}(n) + [d == 1]}{2}\\    
-\sum_{i = 1}^{n}{\sum_{j = 1}^{m}}{d(ij)} = \sum_{d | n}{\sum_{k|m}{[(d,k) == 1]}}\\
-</script><p>求 $\sum_{i =1}^{n}{(i, n)}$  n, q 均为5e4范围    </p>
-<script type="math/tex; mode=display">
-
-\sum_{i = 1}^{n}{(i, n)}  \\
-=\sum_{d|n}{d\sum_{i = 1}^{n}{[(i,n) == d]}}\\
-=\sum_{d|n}{d\sum_{i = 1}^{\frac{n}{d}}{[(i,\frac{n}{d}) == 1]}}\\
-=\sum_{d|n}{d{\phi}(\frac{n}{d})}\\
-</script><p>这样的话时间复杂度为$\theta(q\sqrt {n})$    </p>
-<p>求 $\sum<em>{i =1}^{n}\sum</em>{j = 1}^{m}{f(gcd(i,j))}$   其中$n ≤ m$  , n, q仍然是5e4范围   </p>
-<script type="math/tex; mode=display">
-
-\begin{split}
-&\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{f(gcd(i,j))}}\\
-= &\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{[gcd(i,j) == d]}}}\\
-=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{[gcd(i,j) == 1]}}}\\
-=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{\sum_{e|i,e|j}}{{\mu}(e)}}}\\
-=&\sum_{d = 1}^{n}{f(d)\sum_{e = 1}^{\frac{n}{d}}{{{\mu}(e)}}\lfloor{\frac{n}{de}}\rfloor\lfloor{\frac{m}{de}}\rfloor}\\
-=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor\sum_{d|T}{f(d){\mu}{(\frac{T}{d})}}}\\
-=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor \space g(T)}
-\\
-\end{split}
-</script>
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/12/15/Mul-Anti/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
     </div>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://comeintocalm.cn/"/>
-  <updated>2018-12-22T09:23:42.330Z</updated>
+  <updated>2018-12-23T02:53:53.094Z</updated>
   <id>https://comeintocalm.cn/</id>
   
   <author>
@@ -21,21 +21,13 @@
     <link href="https://comeintocalm.cn/2018/12/15/Mul-Anti/"/>
     <id>https://comeintocalm.cn/2018/12/15/Mul-Anti/</id>
     <published>2018-12-15T15:15:14.000Z</published>
-    <updated>2018-12-22T09:23:42.330Z</updated>
+    <updated>2018-12-23T02:53:53.094Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a>      <script type="math/tex; mode=display">\sum_{d|n}{ {\phi} (d)} = n \\ \sum_{d|n}{ {\mu} (d)} = [n == 1]  \\ {\phi}(n) = \sum_{d|n}{\mu(d)\frac{n}{d}}\\ \sum_{i = 1}^{n}{[(i,n) == 1] \times i} =    \frac{d \times {\phi}(n) + [d == 1]}{2}\\    \sum_{i = 1}^{n}{\sum_{j = 1}^{m}}{d(ij)} = \sum_{d | n}{\sum_{k|m}{[(d,k) == 1]}}\\</script><p>求 $\sum_{i =1}^{n}{(i, n)}$  n, q 均为5e4范围    </p><script type="math/tex; mode=display">\sum_{i = 1}^{n}{(i, n)}  \\=\sum_{d|n}{d\sum_{i = 1}^{n}{[(i,n) == d]}}\\=\sum_{d|n}{d\sum_{i = 1}^{\frac{n}{d}}{[(i,\frac{n}{d}) == 1]}}\\=\sum_{d|n}{d{\phi}(\frac{n}{d})}\\</script><p>这样的话时间复杂度为$\theta(q\sqrt {n})$    </p><p>求 $\sum<em>{i =1}^{n}\sum</em>{j = 1}^{m}{f(gcd(i,j))}$   其中$n ≤ m$  , n, q仍然是5e4范围   </p><script type="math/tex; mode=display">\begin{split}&\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{f(gcd(i,j))}}\\= &\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{[gcd(i,j) == d]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{[gcd(i,j) == 1]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{\sum_{e|i,e|j}}{{\mu}(e)}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{e = 1}^{\frac{n}{d}}{{{\mu}(e)}}\lfloor{\frac{n}{de}}\rfloor\lfloor{\frac{m}{de}}\rfloor}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor\sum_{d|T}{f(d){\mu}{(\frac{T}{d})}}}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor \space g(T)}\\\end{split}</script>]]></content>
+    <content type="html"><![CDATA[<p>莫反入门</p><a id="more"></a>      <script type="math/tex; mode=display">\sum_{d|n}{ {\phi} (d)} = n \\ \sum_{d|n}{ {\mu} (d)} = [n == 1]  \\ {\phi}(n) = \sum_{d|n}{\mu(d)\frac{n}{d}}\\ \sum_{i = 1}^{n}{[(i,n) == 1] \times i} =    \frac{d \times {\phi}(n) + [d == 1]}{2}\\    \sum_{i = 1}^{n}{\sum_{j = 1}^{m}}{d(ij)} = \sum_{d | n}{\sum_{k|m}{[(d,k) == 1]}}\\</script><p>求 $\sum_{i =1}^{n}{(i, n)}$  n, q 均为5e4范围    </p><script type="math/tex; mode=display">\sum_{i = 1}^{n}{(i, n)}  \\=\sum_{d|n}{d\sum_{i = 1}^{n}{[(i,n) == d]}}\\=\sum_{d|n}{d\sum_{i = 1}^{\frac{n}{d}}{[(i,\frac{n}{d}) == 1]}}\\=\sum_{d|n}{d{\phi}(\frac{n}{d})}\\</script><p>这样的话时间复杂度为$\theta(q\sqrt {n})$    </p><p>求 </p><script type="math/tex; mode=display">\sum_{i =1} ^ {n}{\sum_ {j = 1} ^ {m}f((i,j))}n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">\begin{split}&\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{f(gcd(i,j))}}\\= &\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{[gcd(i,j) == d]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{[gcd(i,j) == 1]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{\sum_{e|i,e|j}}{{\mu}(e)}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{e = 1}^{\frac{n}{d}}{{{\mu}(e)}}\lfloor{\frac{n}{de}}\rfloor\lfloor{\frac{m}{de}}\rfloor}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor\sum_{d|T}{f(d){\mu}{(\frac{T}{d})}}}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor \space g(T)}\\\end{split}</script>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;      
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;
-
-\sum_{d|n}{ {\phi} (d)} = n \\
- \sum_{d|n}{ {\mu} (d)} = [n == 1]  \\
- {\phi
-      
+      &lt;p&gt;莫反入门&lt;/p&gt;
     
     </summary>
     
