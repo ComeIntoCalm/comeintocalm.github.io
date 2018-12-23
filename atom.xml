@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://comeintocalm.cn/"/>
-  <updated>2018-12-23T06:30:36.777Z</updated>
+  <updated>2018-12-23T06:33:50.254Z</updated>
   <id>https://comeintocalm.cn/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SDOI 2015 BeyondGun</title>
+    <title>SHOI 2015 BeyondGun</title>
     <link href="https://comeintocalm.cn/2018/12/23/BeyondGun/"/>
     <id>https://comeintocalm.cn/2018/12/23/BeyondGun/</id>
     <published>2018-12-23T04:32:24.000Z</published>
-    <updated>2018-12-23T06:30:36.777Z</updated>
+    <updated>2018-12-23T06:33:50.254Z</updated>
     
     <content type="html"><![CDATA[<p>​     </p><p>屑题</p> <a id="more"></a><p>$T$组数据 求 $\sum_{i = 0}^{k}{C_n^i} (mod \space2333)$ 其中 t &lt;= 1e5, n, k &lt;= 1e18….    </p><p>设$f(n,k) = \sum_{i = 0}^{k}{C_n^i} (mod \space2333)$  然后用卢卡斯展开一下    </p><p>得到    </p><script type="math/tex; mode=display">\begin{split}\\f(n,k) &= \sum_{i = 0}^{k}{C_n^i} \%2333\space(mod\space p)\\&= \sum_{i = 0}^{\lfloor\frac{k}{p}\rfloor} {C ^ {  \space i }_{\frac{n}{p}}}{\sum_{j = 0}^{\min(p-1,k - pi)}{C_{n \% p}^j}} \space  (mod \space p)\\&= f(n \% p,p - 1) \times f(n/p, k /p - 1) + C_{n/p}^{k/p} \times f(n \% p, k \% p)\end{split}</script><p>然后把那个小块暴力算掉就好了</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> ll p = <span class="number">2333</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">3e3</span> + <span class="number">7</span>;</span><br><span class="line">ll C[N][N], f[N][N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">Lucas</span> <span class="params">(ll m, ll n)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (!n || n == m || !m) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (m &lt; n) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">return</span> (C[m % p][n % p] * Lucas (m / p, n / p)) % p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> ll <span class="title">func</span> <span class="params">(ll n, ll k)</span> </span>&#123;</span><br><span class="line"><span class="keyword">if</span> (k &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> (!n || !k) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (n &lt; p &amp;&amp; k &lt; p) <span class="keyword">return</span> f[n][k];</span><br><span class="line"><span class="keyword">return</span> (func(n / p, k / p - <span class="number">1</span>) * f[n % p][p - <span class="number">1</span>] % p </span><br><span class="line">+ Lucas (n / p, k / p) * f[n % p][k % p] % p) % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> T; ll n, k;</span><br><span class="line"><span class="built_in">scanf</span> (<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">C[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= p + <span class="number">2</span>; i++) &#123;</span><br><span class="line">C[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j++)</span><br><span class="line">C[i][j] = (C[i - <span class="number">1</span>][j - <span class="number">1</span>] + C[i - <span class="number">1</span>][j]) % p;</span><br><span class="line">&#125; <span class="comment">//f[0][0] = 1;</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= p + <span class="number">2</span>; i++) f[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= p + <span class="number">2</span>; i++) <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= p + <span class="number">2</span>; j++)</span><br><span class="line">f[i][j] = (C[i][j] + f[i][j - <span class="number">1</span>]) % p;</span><br><span class="line"><span class="keyword">while</span> (T--) &#123;</span><br><span class="line"><span class="built_in">scanf</span> (<span class="string">"%lld%lld"</span>, &amp;n, &amp;k);</span><br><span class="line"><span class="built_in">printf</span> (<span class="string">"%lld\n"</span>, func(n, k) % p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -84,9 +84,9 @@
       <category term="OI题解" scheme="https://comeintocalm.cn/categories/OI%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
-    
       <category term="贪心" scheme="https://comeintocalm.cn/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -108,11 +108,11 @@
       <category term="OI题解" scheme="https://comeintocalm.cn/categories/OI%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
+      <category term="基环树" scheme="https://comeintocalm.cn/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/"/>
     
       <category term="贪心" scheme="https://comeintocalm.cn/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="基环树" scheme="https://comeintocalm.cn/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/"/>
+      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
