@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://comeintocalm.cn/"/>
-  <updated>2018-12-23T06:33:50.254Z</updated>
+  <updated>2019-01-01T12:30:24.361Z</updated>
   <id>https://comeintocalm.cn/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019新征途。</title>
+    <link href="https://comeintocalm.cn/2019/01/01/NewYear/"/>
+    <id>https://comeintocalm.cn/2019/01/01/NewYear/</id>
+    <published>2019-01-01T12:26:16.000Z</published>
+    <updated>2019-01-01T12:30:24.361Z</updated>
+    
+    <content type="html"><![CDATA[<p>总的来说18年啥都没干, 破水平还是破水平…..</p><p>19年加油。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;总的来说18年啥都没干, 破水平还是破水平…..&lt;/p&gt;
+&lt;p&gt;19年加油。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="2018年度总结" scheme="https://comeintocalm.cn/categories/2018%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>SHOI 2015 BeyondGun</title>
@@ -46,9 +71,9 @@
     <link href="https://comeintocalm.cn/2018/12/15/Mul-Anti/"/>
     <id>https://comeintocalm.cn/2018/12/15/Mul-Anti/</id>
     <published>2018-12-15T15:15:14.000Z</published>
-    <updated>2018-12-23T02:53:53.094Z</updated>
+    <updated>2019-01-04T14:53:34.765Z</updated>
     
-    <content type="html"><![CDATA[<p>莫反入门</p><a id="more"></a>      <script type="math/tex; mode=display">\sum_{d|n}{ {\phi} (d)} = n \\ \sum_{d|n}{ {\mu} (d)} = [n == 1]  \\ {\phi}(n) = \sum_{d|n}{\mu(d)\frac{n}{d}}\\ \sum_{i = 1}^{n}{[(i,n) == 1] \times i} =    \frac{d \times {\phi}(n) + [d == 1]}{2}\\    \sum_{i = 1}^{n}{\sum_{j = 1}^{m}}{d(ij)} = \sum_{d | n}{\sum_{k|m}{[(d,k) == 1]}}\\</script><p>求 $\sum_{i =1}^{n}{(i, n)}$  n, q 均为5e4范围    </p><script type="math/tex; mode=display">\sum_{i = 1}^{n}{(i, n)}  \\=\sum_{d|n}{d\sum_{i = 1}^{n}{[(i,n) == d]}}\\=\sum_{d|n}{d\sum_{i = 1}^{\frac{n}{d}}{[(i,\frac{n}{d}) == 1]}}\\=\sum_{d|n}{d{\phi}(\frac{n}{d})}\\</script><p>这样的话时间复杂度为$\theta(q\sqrt {n})$    </p><p>求 </p><script type="math/tex; mode=display">\sum_{i =1} ^ {n}{\sum_ {j = 1} ^ {m}f((i,j))}n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">\begin{split}&\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{f(gcd(i,j))}}\\= &\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{[gcd(i,j) == d]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{[gcd(i,j) == 1]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{\sum_{e|i,e|j}}{{\mu}(e)}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{e = 1}^{\frac{n}{d}}{{{\mu}(e)}}\lfloor{\frac{n}{de}}\rfloor\lfloor{\frac{m}{de}}\rfloor}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor\sum_{d|T}{f(d){\mu}{(\frac{T}{d})}}}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor \space g(T)}\\\end{split}</script>]]></content>
+    <content type="html"><![CDATA[<p>莫反入门</p><a id="more"></a>      <script type="math/tex; mode=display">\sum_{d|n}{ {\phi} (d)} = n \\ \sum_{d|n}{ {\mu} (d)} = [n == 1]  \\ {\phi}(n) = \sum_{d|n}{\mu(d)\frac{n}{d}}\\ \sum_{i = 1}^{n}{[(i,n) == 1] \times i} =    \frac{d \times {\phi}(n) + [d == 1]}{2}\\    \sum_{i = 1}^{n}{\sum_{j = 1}^{m}}{d(ij)} = \sum_{d | n}{\sum_{k|m}{[(d,k) == 1]}}\\</script><p>求 $\sum_{i =1}^{n}{(i, n)}$  n, q 均为5e4范围    </p><script type="math/tex; mode=display">\sum_{i = 1}^{n}{(i, n)}  \\=\sum_{d|n}{d\sum_{i = 1}^{n}{[(i,n) == d]}}\\=\sum_{d|n}{d\sum_{i = 1}^{\frac{n}{d}}{[(i,\frac{n}{d}) == 1]}}\\=\sum_{d|n}{d{\phi}(\frac{n}{d})}\\</script><p>这样的话时间复杂度为$\theta(q\sqrt {n})$    </p><p>求 </p><script type="math/tex; mode=display">\sum_{i =1} ^ {n}{\sum_ {j = 1} ^ {m}f((i,j))}n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">\begin{split}&\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{f(gcd(i,j))}}\\= &\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{n}{\sum_{j = 1}^{m}{[gcd(i,j) == d]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{[gcd(i,j) == 1]}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{\sum_{e|i,e|j}}{{\mu}(e)}}}\\=&\sum_{d = 1}^{n}{f(d)\sum_{e = 1}^{\frac{n}{d}}{{{\mu}(e)}}\lfloor{\frac{n}{de}}\rfloor\lfloor{\frac{m}{de}}\rfloor}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor\sum_{d|T}{f(d){\mu}{(\frac{T}{d})}}}\\=&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor \space g(T)}\\\end{split}</script><p>​     </p><p>一开始可以考虑枚举对于值为$d$的$gcd(i,j)$有多少对，就可以把$f(d)$单独拿出来  后面的当成系数看。   </p><p>考虑$gcd(i,j)$为d的有多少对的时候 ， 可以想到每$d$个数里至多只有一个含有$d$这个因子，于是可以考虑把上界和判断值  </p><p>都除以$d$， 然后就变成了求互质的$i,j$对数。   </p><p>判断一个数是不是$1$这个玩意可以莫比乌斯反演一发 ， 现在出来一个新的系数$e$，   </p><p>哎咋看着越来越……麻烦了啊…..    等等….     </p><p>这个时候可以发现 实际上就是在统计$\mu(e)$的和  这个时候我们再来考虑统计每个$\mu(e)$的系数，  因为在原来的位置中$e$是   </p><p>作为因子出现  这个时候统计$\mu(e)$的系数实际上就是在统计合法的倍数对数于是就有$ K = n/de * m / de$   (下取整)   </p><p>这个时候发现 K 的取值实际上是只受$d e$这两个东西影响的  所以我们考虑枚举$T = de$ 也就是考虑枚举$K$的系数 ，   </p><p>后面枚举$T$的因子$d$实际上就是考虑$f(d)\mu(\frac{T}{d})$ 两者乘积对于K的贡献。也就是对于每个数$d$有以上贡献。   </p><p>后面那个东西可以</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j * i &lt;= n; j++) g[i * j] += f[i] * mu[j];</span><br></pre></td></tr></table></figure><p>复杂度是个调和级数。    每次回答可以数论分块, 就是求 $K$取值相同的一块左右边界。</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>, r; l &lt;= n; l = r + <span class="number">1</span>) </span><br><span class="line">  r = min (n / (n / l), m / (m / l)) ans +=  (S(r) - S(l - <span class="number">1</span>)) * K;</span><br></pre></td></tr></table></figure><p>$S(T)$是$g$的前缀和。 这个玩意可以做到$\sqrt{n}$回答一次询问。     </p><p>对于因子枚举那部分 ， 因为是求和 所以有对称性 ， 意思就是说可以把$f(d)$换成$f(\frac{T}{d})$  当然其他的也要换一下。</p><p>很多时候对于$g$这种函数可以线性筛   实在不行暴力加一下， 慢不到哪里去的。  还有一些时候需要杜教筛。</p><h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><p>咕咕咕    </p><p>基本上套Eg2就完事… 自己去搜搜8……</p>]]></content>
     
     <summary type="html">
     
@@ -57,9 +82,9 @@
     </summary>
     
     
-      <category term="莫比乌斯反演" scheme="https://comeintocalm.cn/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
-    
       <category term="数论" scheme="https://comeintocalm.cn/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="莫比乌斯反演" scheme="https://comeintocalm.cn/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
     
   </entry>
   
@@ -84,9 +109,9 @@
       <category term="OI题解" scheme="https://comeintocalm.cn/categories/OI%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
-    
       <category term="贪心" scheme="https://comeintocalm.cn/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
@@ -108,11 +133,11 @@
       <category term="OI题解" scheme="https://comeintocalm.cn/categories/OI%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
+      <category term="基环树" scheme="https://comeintocalm.cn/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/"/>
     
       <category term="贪心" scheme="https://comeintocalm.cn/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="基环树" scheme="https://comeintocalm.cn/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/"/>
+      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   

@@ -109,14 +109,14 @@
 
 
   <meta name="description" content="莫反入门">
-<meta name="keywords" content="莫比乌斯反演,数论">
+<meta name="keywords" content="数论,莫比乌斯反演">
 <meta property="og:type" content="article">
 <meta property="og:title" content="莫比乌斯反演">
 <meta property="og:url" content="https://comeintocalm.cn/2018/12/15/Mul-Anti/index.html">
 <meta property="og:site_name" content="cjc&#39;s Blog">
 <meta property="og:description" content="莫反入门">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-23T02:53:53.094Z">
+<meta property="og:updated_time" content="2019-01-04T14:53:34.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="莫比乌斯反演">
 <meta name="twitter:description" content="莫反入门">
@@ -419,7 +419,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-12-23 10:53:53" itemprop="dateModified" datetime="2018-12-23T10:53:53+08:00">2018-12-23</time>
+                <time title="修改时间：2019-01-04 22:53:34" itemprop="dateModified" datetime="2019-01-04T22:53:34+08:00">2019-01-04</time>
               
             
           </span>
@@ -498,7 +498,26 @@ n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">
 =&\sum_{T = de = 1}^{n}{\lfloor{\frac{n}{T}}\rfloor\lfloor{\frac{m}{T}}\rfloor \space g(T)}
 \\
 \end{split}
-</script>
+</script><p>​     </p>
+<p>一开始可以考虑枚举对于值为$d$的$gcd(i,j)$有多少对，就可以把$f(d)$单独拿出来  后面的当成系数看。   </p>
+<p>考虑$gcd(i,j)$为d的有多少对的时候 ， 可以想到每$d$个数里至多只有一个含有$d$这个因子，于是可以考虑把上界和判断值  </p>
+<p>都除以$d$， 然后就变成了求互质的$i,j$对数。   </p>
+<p>判断一个数是不是$1$这个玩意可以莫比乌斯反演一发 ， 现在出来一个新的系数$e$，   </p>
+<p>哎咋看着越来越……麻烦了啊…..    等等….     </p>
+<p>这个时候可以发现 实际上就是在统计$\mu(e)$的和  这个时候我们再来考虑统计每个$\mu(e)$的系数，  因为在原来的位置中$e$是   </p>
+<p>作为因子出现  这个时候统计$\mu(e)$的系数实际上就是在统计合法的倍数对数于是就有$ K = n/de * m / de$   (下取整)   </p>
+<p>这个时候发现 K 的取值实际上是只受$d e$这两个东西影响的  所以我们考虑枚举$T = de$ 也就是考虑枚举$K$的系数 ，   </p>
+<p>后面枚举$T$的因子$d$实际上就是考虑$f(d)\mu(\frac{T}{d})$ 两者乘积对于K的贡献。也就是对于每个数$d$有以上贡献。   </p>
+<p>后面那个东西可以</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j * i &lt;= n; j++) g[i * j] += f[i] * mu[j];</span><br></pre></td></tr></table></figure>
+<p>复杂度是个调和级数。    每次回答可以数论分块, 就是求 $K$取值相同的一块左右边界。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>, r; l &lt;= n; l = r + <span class="number">1</span>) </span><br><span class="line">  r = min (n / (n / l), m / (m / l)) ans +=  (S(r) - S(l - <span class="number">1</span>)) * K;</span><br></pre></td></tr></table></figure>
+<p>$S(T)$是$g$的前缀和。 这个玩意可以做到$\sqrt{n}$回答一次询问。     </p>
+<p>对于因子枚举那部分 ， 因为是求和 所以有对称性 ， 意思就是说可以把$f(d)$换成$f(\frac{T}{d})$  当然其他的也要换一下。</p>
+<p>很多时候对于$g$这种函数可以线性筛   实在不行暴力加一下， 慢不到哪里去的。  还有一些时候需要杜教筛。</p>
+<h5 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h5><p>咕咕咕    </p>
+<p>基本上套Eg2就完事… 自己去搜搜8……</p>
+
       
     </div>
 
@@ -522,9 +541,9 @@ n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">
       
         <div class="post-tags">
           
-            <a href="/tags/莫比乌斯反演/" rel="tag"># 莫比乌斯反演</a>
-          
             <a href="/tags/数论/" rel="tag"># 数论</a>
+          
+            <a href="/tags/莫比乌斯反演/" rel="tag"># 莫比乌斯反演</a>
           
         </div>
       
@@ -597,8 +616,17 @@ n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -615,7 +643,7 @@ n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -632,7 +660,9 @@ n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -727,6 +757,22 @@ n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#例题"><span class="nav-number">1.</span> <span class="nav-text">例题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -740,7 +786,7 @@ n ≤ m  , n, q仍然是5e4范围</script><script type="math/tex; mode=display">
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright"> &copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright"> &copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
