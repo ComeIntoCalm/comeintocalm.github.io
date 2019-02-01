@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://comeintocalm.cn/"/>
-  <updated>2019-01-01T12:30:24.361Z</updated>
+  <updated>2019-02-01T16:41:57.068Z</updated>
   <id>https://comeintocalm.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>luogu4240毒瘤之神的考验</title>
+    <link href="https://comeintocalm.cn/2019/02/01/duliu1/"/>
+    <id>https://comeintocalm.cn/2019/02/01/duliu1/</id>
+    <published>2019-02-01T15:34:11.000Z</published>
+    <updated>2019-02-01T16:41:57.068Z</updated>
+    
+    <content type="html"><![CDATA[<p>​     </p><h5 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h5><p>求  </p><script type="math/tex; mode=display">\sum_{i = 1}^n{\sum_{j = 1}^m{\phi(ij)}}\\n,m\leq 10^5, T\leq 10^4,n\leq m\\</script><p>思路还是非常巧妙的。   </p><p>看到$ij$粘在一起 所以考虑把$\phi(ij)$这个东西拆开。   考虑如下式子   </p><script type="math/tex; mode=display">\phi(ij) = \frac{\phi(i)\phi(j)gcd(i,j)}{\phi(gcd(i,j))}</script><p>考虑$\phi$的定义  $\phi(i)\phi(j)$ 相对于$\phi(ij)$来说  ， 中间重叠了相同的一部分质因子$p_i$  考虑除去这些质因子   </p><p>可以除一下$\phi(gcd(i,j))$  重叠的质因子是属于$gcd(i,j)$的  但是除掉$\phi(gcd(i,j))$以后 $ij $ 也被多除掉了$gcd(i,j)$，</p><p>所以考虑再把$gcd(i,j)$乘回来。  得到上式。</p><p>此时得到 式子 </p><script type="math/tex; mode=display">\sum_{i = 1}^n{\sum_{j = 1}^m{\frac{\phi(i)\phi(j)gcd(i,j)}{\phi(gcd(i,j))}}}</script><p>我们习惯性的把$gcd$提出来。得到   </p><script type="math/tex; mode=display">\sum_{d = 1}^{n}{\frac{d}{\phi(d)}}{\sum_{i = 1}^n{\sum_{j = 1}^m{\phi(i)\phi(j)[gcd(i,j) == d]}}}</script><p>再把后面除掉$d$  </p><script type="math/tex; mode=display">\sum_{d = 1}^{n}{\frac{d}{\phi(d)}}{\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{\phi(id)\phi(jd)[i\perp j]}}}</script><p>来一发莫反   </p><script type="math/tex; mode=display">\sum_{d = 1}^{n}{\frac{d}{\phi(d)}}{\sum_{i = 1}^{\frac{n}{d}}{\sum_{j = 1}^{\frac{m}{d}}{\phi(id)\phi(jd)\sum_{e\mid i,e\mid j}{\mu(e)}}}}</script><p>把枚举$\phi(id)\phi(jd)$作为系数  对每个$e$造成影响的是$e$在上界为$\frac{n}{d}$范围内的$d$的倍数。</p><script type="math/tex; mode=display">\sum_{d = 1}^{n}{\frac{d}{\phi(d)}}{\sum_{e = 1}^{\frac{n}{d}}{\mu(e)\sum_{i = 1}^{\frac{n}{de}}{\phi(ide)\sum_{j = 1}^{\frac{m}{de}}{\phi(jde)}}}}</script><p>接着枚举$de$的乘积$T$ 然后$\frac{d}{\phi(d)}$和$\mu(e)$脱成了卷积。</p><script type="math/tex; mode=display">\sum_{T = de = 1}^{n}{\sum_{i = 1}^{\frac{n}{T}}{\phi(iT)\sum_{j = 1}^{\frac{m}{T}}{\phi(jT)}}\sum_{d\mid T}{\mu(\frac{T}{d})(\frac{d}{\phi(d)})}}</script><p>设$G(\frac{n}{T},T) =  \sum<em>{i = 1}^{\frac{n}{T}}{\phi(iT) }$ ， $f(T) = \sum</em>{d\mid T}{\mu(\frac{T}{d})(\frac{d}{\phi(d)})}$    于是有   </p><script type="math/tex; mode=display">\sum_{T = de = 1}^{n}{G(\frac{n}{T},T)G(\frac{m}{T},T)f(T)}</script><p>其中$G$可以调和级数复杂度处理出来 丢到一个$vector$里, $f$也可以调和级数复杂度处理。  </p><p>其中</p><script type="math/tex; mode=display">G(\lfloor\frac{n}{T}\rfloor,T) =  \sum_{i = 1}^{\lfloor\frac{n}{T}\rfloor}{\phi(iT) }= \sum_{i = 1}^{\lfloor\frac{n}{T}\rfloor - 1}{\phi(iT) }+\phi(\lfloor\frac{n}{T}\rfloor T)= G(\lfloor\frac{n}{T}\rfloor - 1,T) + \phi(\lfloor\frac{n}{T}\rfloor T)</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;​     &lt;/p&gt;
+&lt;h5 id=&quot;题目描述&quot;&gt;&lt;a href=&quot;#题目描述&quot; class=&quot;headerlink&quot; title=&quot;题目描述&quot;&gt;&lt;/a&gt;题目描述&lt;/h5&gt;&lt;p&gt;求  &lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\
+      
+    
+    </summary>
+    
+    
+      <category term="莫比乌斯反演" scheme="https://comeintocalm.cn/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
+    
+      <category term="数论" scheme="https://comeintocalm.cn/tags/%E6%95%B0%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>2019新征途。</title>
@@ -82,9 +110,9 @@
     </summary>
     
     
-      <category term="数论" scheme="https://comeintocalm.cn/tags/%E6%95%B0%E8%AE%BA/"/>
-    
       <category term="莫比乌斯反演" scheme="https://comeintocalm.cn/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/"/>
+    
+      <category term="数论" scheme="https://comeintocalm.cn/tags/%E6%95%B0%E8%AE%BA/"/>
     
   </entry>
   
@@ -109,9 +137,9 @@
       <category term="OI题解" scheme="https://comeintocalm.cn/categories/OI%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="贪心" scheme="https://comeintocalm.cn/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
+    
+      <category term="贪心" scheme="https://comeintocalm.cn/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -133,11 +161,11 @@
       <category term="OI题解" scheme="https://comeintocalm.cn/categories/OI%E9%A2%98%E8%A7%A3/"/>
     
     
-      <category term="基环树" scheme="https://comeintocalm.cn/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/"/>
+      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
     
       <category term="贪心" scheme="https://comeintocalm.cn/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="树上问题" scheme="https://comeintocalm.cn/tags/%E6%A0%91%E4%B8%8A%E9%97%AE%E9%A2%98/"/>
+      <category term="基环树" scheme="https://comeintocalm.cn/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/"/>
     
   </entry>
   
