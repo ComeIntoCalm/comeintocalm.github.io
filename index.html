@@ -360,6 +360,195 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://comeintocalm.cn/2019/02/02/二项式反演/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ComeIntoCalm">
+      <meta itemprop="description" content="我也不知道该怎么写。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cjc's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/02/二项式反演/" itemprop="url">
+                  二项式反演
+                </a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-02 17:02:23 / 修改时间：17:22:37" itemprop="dateCreated datePublished" datetime="2019-02-02T17:02:23+08:00">2019-02-02</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/02/02/二项式反演/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/02/02/二项式反演/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="二项式反演的基本形式"><a href="#二项式反演的基本形式" class="headerlink" title="二项式反演的基本形式"></a>二项式反演的基本形式</h4><script type="math/tex; mode=display">
+
+f(n) = \sum_{i = 0}^{n}{g(i)C_n^i} \Longleftrightarrow g(n) = \sum_{i = 0}^n{(-1)^{n-i}C_n^if(i)}
+</script><h5 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h5><p>将$f(n) = \sum<em>{i = 0}^{n}{g(i)C_n^i}$代入$g(n) = \sum</em>{i = 0}^n{(-1)^{n-i}C_n^if(i)}$中的$f(i)$可以得到     </p>
+<script type="math/tex; mode=display">
+
+g(n) = \sum_{i = 0}^n{(-1)^{n-i}C_n^i\sum_{j = 0}^{i}{g(j)C_i^j}}
+</script><p>考虑枚举$g(j)$的系数  于是有     </p>
+<script type="math/tex; mode=display">
+
+g(n) = \sum_{j = 0}^n{g(j)\sum_{i = j}^{n}{(-1)^{n - i}C_n^iC_i^j}}
+</script><p>将$C<em>n^i$和$C_i^j$和并得到 $C_n^jC</em>{n - j}^{i - j}$  即    </p>
+<script type="math/tex; mode=display">
+{ % raw %}
+g(n) = \sum_{j = 0}^n{g(j)\sum_{i = j}^{n}{(-1)^{n - i}C_n^jC_{n - j}^{i - j}}}
+
+$$
+将无关项$C_n^j$提到前面    得到    
+$$
+{% raw %}
+g(n) = \sum_{j = 0}^n{g(j)C_n^j\sum_{i = j}^{n}{(-1)^{n - i}C_{n - j}^{i - j}}}
+{% endraw %}</script><p>由二项式定理得到   </p>
+<script type="math/tex; mode=display">
+{% raw %}
+g(n) = \sum_{j = 0}^n{g(j)C_n^j(-1+1)^{n-j}}
+{% endraw %}</script><p>发现只有当$n - j = 0$有值 得到  </p>
+<script type="math/tex; mode=display">
+{% raw %}
+g(n) = C_n^ng(n) = g(n)
+{% endraw %}</script><p>所以这个是正确的。   </p>
+<h5 id="意义上"><a href="#意义上" class="headerlink" title="意义上"></a>意义上</h5><p>若现在有 ${% raw %} g(n)= \sum_{i = 0}^n{a_{ni}f(i)} {% endraw %}$和${% raw %}f(n)=\sum_{i = 0}^n{b_{ni}g(i)}{% endraw %}<em>**</em>$ 将第一个式子强行带入第二个式子 可以得到    </p>
+<script type="math/tex; mode=display">
+{% raw %}
+\begin{align}
+f(n) = &\sum_{i = 0}^n{b_{ni}g(i)}\\
+=&\sum_{i = 0}^n{b_{ni} \sum_{j = 1}^{i}{a_{ij}f(j)}}\\
+=&\sum_{i = 0}^{n}{{f(i)} \sum_{j = i}^{n}{b_{nj}a_{ij}}}
+\end{align}
+{% endraw %}</script><p>假设现在有 ${% raw %}\delta_{ij} = [i == j]{% endraw %}$   明显反演式成立的条件是${% raw %}\sum_{j = i}^n{b_{nj}}{a_{ij}} = \delta_{ij} {% endraw %}$    </p>
+<p>也就是说如果能找出这么一个关系 就可以直接反演。   </p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://comeintocalm.cn/2019/02/01/duliu1/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -917,7 +1106,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-01-04 22:53:34" itemprop="dateModified" datetime="2019-01-04T22:53:34+08:00">2019-01-04</time>
+                <time title="修改时间：2019-02-02 17:22:56" itemprop="dateModified" datetime="2019-02-02T17:22:56+08:00">2019-02-02</time>
               
             
           </span>
@@ -1961,7 +2150,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2017,7 +2206,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">12</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2600,6 +2793,8 @@
 
   
   
+    
+      
     
       
     
